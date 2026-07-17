@@ -28,52 +28,52 @@ const photoFrame = document.getElementById("photoFrame");
 const memories = [
 
 {
-    image:"assets/photos/photo1.JPG",
+    image:"assets/photos/photo1.jpg",
     reaction:"The day I saw you in this saree, my heart quietly whispered, 'She's the one.' 💚"
 },
 
 {
-    image:"assets/photos/photo2.JPG",
+    image:"assets/photos/photo2.jpg",
     reaction:"That beautiful smile still manages to brighten even my darkest days. 😊💕"
 },
 
 {
-    image:"assets/photos/photo3.JPG",
+    image:"assets/photos/photo3.jpg",
     reaction:"You looked so graceful that even the flowers seemed happy to stand beside you. 🌺❤️"
 },
 
 {
-    image:"assets/photos/photo4.JPG",
+    image:"assets/photos/photo4.jpg",
     reaction:"I could get lost in your beautiful hair and never want to find my way back. 🥹🖤"
 },
 
 {
-    image:"assets/photos/photo5.JPG",
+    image:"assets/photos/photo5.jpg",
     reaction:"Every little glance of yours feels like my favorite love story coming alive. ✨❤️"
 },
 
 {
-    image:"assets/photos/photo6.JPG",
+    image:"assets/photos/photo6.jpg",
     reaction:"Seeing you from behind somehow made me fall for you all over again. 💖"
 },
 
 {
-    image:"assets/photos/photo7.JPG",
+    image:"assets/photos/photo7.jpg",
     reaction:"This smile deserves to be protected, cherished, and loved every single day. 🌸"
 },
 
 {
-    image:"assets/photos/photo8.JPG",
+    image:"assets/photos/photo8.jpg",
     reaction:"You make every place look beautiful simply by standing there with that smile. 💕"
 },
 
 {
-    image:"assets/photos/photo9.JPG",
+    image:"assets/photos/photo9.jpg",
     reaction:"The world fades away whenever I see you smiling like this. ❤️🥹"
 },
 
 {
-    image:"assets/photos/photo10.JPG",
+    image:"assets/photos/photo10.jpg",
     reaction:"If I had one wish, it would be to keep making memories with you forever. 🤍"
 }
 
