@@ -1,0 +1,631 @@
+/* ==========================================
+   forever.css
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:"Poppins",sans-serif;
+
+    background:
+    radial-gradient(circle at top,#fffdfb,#fff6f8,#fffdfb);
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+    color:#444;
+
+}
+
+/* ========================= */
+
+.container{
+
+    width:min(1100px,92%);
+
+    margin:60px auto;
+
+    background:rgba(255,255,255,.92);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:32px;
+
+    padding:50px;
+
+    box-shadow:
+    0 20px 60px rgba(255,120,170,.15);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* ========================= */
+
+h1{
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:68px;
+
+    color:#ff5f92;
+
+    text-align:center;
+
+    margin-bottom:18px;
+
+}
+
+/* ========================= */
+
+.subtitle{
+
+    text-align:center;
+
+    max-width:760px;
+
+    margin:auto;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:#666;
+
+    margin-bottom:50px;
+
+}
+
+/* ========================= */
+/* COLLAGE */
+/* ========================= */
+
+.collage{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:22px;
+
+    margin-bottom:60px;
+
+}
+
+.collage img{
+
+    width:100%;
+
+    border-radius:22px;
+
+    object-fit:cover;
+
+    box-shadow:
+    0 12px 35px rgba(0,0,0,.12);
+
+    transition:.4s;
+
+    cursor:pointer;
+
+}
+
+.collage img:hover{
+
+    transform:
+    scale(1.04)
+    rotate(1deg);
+
+}
+
+.poster{
+
+    grid-column:1/3;
+
+    max-height:720px;
+
+}
+
+/* ========================= */
+
+.quote-card{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:
+    0 12px 30px rgba(255,150,190,.12);
+
+    margin-bottom:25px;
+
+    transition:.35s;
+
+}
+
+.quote-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.quote-card h3{
+
+    color:#ff5f92;
+
+    margin-bottom:10px;
+
+}
+
+.quote-card p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+/* ========================= */
+
+.letter{
+
+    background:white;
+
+    border-radius:30px;
+
+    padding:45px;
+
+    margin-top:40px;
+
+    box-shadow:
+    0 20px 45px rgba(255,170,200,.18);
+
+}
+
+.letter h2{
+
+    color:#ff5f92;
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+    font-size:34px;
+
+}
+
+.letter p{
+
+    font-size:18px;
+
+    line-height:2;
+
+    color:#555;
+
+    margin-bottom:18px;
+
+}
+
+/* ========================= */
+
+.promise{
+
+    background:#fff5f8;
+
+    border:2px solid #ffd8e6;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin:30px 0;
+
+}
+
+.promise div{
+
+    margin:15px 0;
+
+    font-size:18px;
+
+}
+
+/* ========================= */
+
+.final-text{
+
+    text-align:center;
+
+    margin-top:35px;
+
+}
+
+.final-text h2{
+
+    font-size:46px;
+
+    color:#ff5f92;
+
+    margin-bottom:20px;
+
+    font-family:"Great Vibes",cursive;
+
+}
+
+.final-text p{
+
+    font-size:20px;
+
+    line-height:2;
+
+}
+
+/* ========================= */
+
+.quote{
+
+    margin:55px auto;
+
+    max-width:700px;
+
+    text-align:center;
+
+    font-size:34px;
+
+    font-family:"Great Vibes",cursive;
+
+    color:#ff5f92;
+
+}
+
+/* ========================= */
+
+button{
+
+    display:block;
+
+    margin:45px auto 10px;
+
+    padding:18px 45px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+    135deg,
+    #ff6fa4,
+    #ff8eb8);
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:
+    0 15px 35px rgba(255,110,160,.35);
+
+}
+
+button:hover{
+
+    transform:
+    translateY(-5px)
+    scale(1.05);
+
+}
+
+/* ========================= */
+/* FLOATING HEARTS */
+/* ========================= */
+
+.hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+.heart{
+
+    position:absolute;
+
+    font-size:24px;
+
+    animation:floatHeart linear forwards;
+
+}
+
+@keyframes floatHeart{
+
+    from{
+
+        transform:
+        translateY(120vh)
+        scale(.7);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:
+        translateY(-120px)
+        scale(1.4);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ========================= */
+/* DUDU & BUBU */
+/* ========================= */
+
+.dudu{
+
+    position:fixed;
+
+    width:120px;
+
+    left:25px;
+
+    bottom:25px;
+
+    animation:float 3s ease-in-out infinite;
+
+}
+
+.bubu{
+
+    position:fixed;
+
+    width:120px;
+
+    right:25px;
+
+    bottom:25px;
+
+    animation:float 3s ease-in-out infinite .8s;
+
+}
+
+@keyframes float{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+
+/* ========================= */
+/* THANK YOU OVERLAY */
+/* ========================= */
+
+.overlay{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(255,255,255,.96);
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+    overflow-y:auto;
+
+    padding:70px 30px 50px;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.8s;
+
+    z-index:999;
+
+    text-align:center;
+
+    scroll-behavior:smooth;
+
+}
+
+.overlay.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.overlay h1{
+
+    font-size:70px;
+
+    margin-bottom:25px;
+
+}
+
+.overlay p{
+
+    font-size:22px;
+
+    line-height:2;
+
+    color:#555;
+
+}
+
+/* ========================= */
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:.8s;
+
+}
+
+.fade-up.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ========================= */
+
+@media(max-width:900px){
+
+.container{
+
+padding:28px;
+
+}
+
+h1{
+
+font-size:48px;
+
+}
+
+.collage{
+
+grid-template-columns:1fr;
+
+}
+
+.poster{
+
+grid-column:auto;
+
+}
+
+.quote{
+
+font-size:28px;
+
+}
+
+.letter{
+
+padding:28px;
+
+}
+
+.final-text h2{
+
+font-size:36px;
+
+}
+
+.dudu,
+.bubu{
+
+width:80px;
+
+}
+
+}
+
+/* ==========================================
+   Click Hint
+========================================== */
+
+.click-hint{
+
+    text-align:center;
+
+    margin-top:20px;
+
+    margin-bottom:-18px;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    color:#ff5f92;
+
+    animation:hintFloat 1.8s ease-in-out infinite;
+
+    user-select:none;
+
+    letter-spacing:.3px;
+
+    text-shadow:
+        0 0 10px rgba(255,95,146,.18);
+
+}
+
+@keyframes hintFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+        opacity:.85;
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+        opacity:1;
+
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+    .click-hint{
+
+        font-size:17px;
+
+        margin-top:15px;
+
+        margin-bottom:-8px;
+
+    }
+
+}

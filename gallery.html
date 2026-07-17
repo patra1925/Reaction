@@ -1,0 +1,208 @@
+/* ==========================================
+   Part 2
+   Navigation & Effects
+========================================== */
+
+// ==========================================
+// Previous Button
+// ==========================================
+
+prevBtn.addEventListener("click", () => {
+
+    if (currentIndex === 0) return;
+
+    currentIndex--;
+
+    loadMemory(currentIndex);
+
+    createHeartBurst();
+    createSparkBurst();
+
+});
+
+// ==========================================
+// Next Button
+// ==========================================
+
+nextBtn.addEventListener("click", () => {
+
+    if (currentIndex < memories.length - 1) {
+
+        currentIndex++;
+
+        loadMemory(currentIndex);
+
+        createHeartBurst();
+        createSparkBurst();
+
+    } else {
+
+        nextBtn.disabled = true;
+
+        nextBtn.textContent = "Loading...";
+
+        setTimeout(() => {
+
+            window.location.href = "gallery.html";
+
+        }, 1200);
+
+    }
+
+});
+
+// ==========================================
+// Keyboard Navigation
+// ==========================================
+
+document.addEventListener("keydown", (e) => {
+
+    if (e.key === "ArrowRight") {
+
+        nextBtn.click();
+
+    }
+
+    if (e.key === "ArrowLeft") {
+
+        prevBtn.click();
+
+    }
+
+});
+
+// ==========================================
+// Floating Petals
+// ==========================================
+
+const petalsContainer = document.getElementById("petals");
+
+function createPetal() {
+
+    if (!petalsContainer) return;
+
+    const petal = document.createElement("div");
+
+    petal.className = "petal";
+
+    const flowers = ["🌸", "🌺", "💮", "🌼"];
+
+    petal.textContent =
+        flowers[Math.floor(Math.random() * flowers.length)];
+
+    petal.style.left = Math.random() * 100 + "vw";
+
+    petal.style.animationDuration =
+        6 + Math.random() * 5 + "s";
+
+    petal.style.fontSize =
+        18 + Math.random() * 18 + "px";
+
+    petalsContainer.appendChild(petal);
+
+    setTimeout(() => {
+
+        petal.remove();
+
+    }, 11000);
+
+}
+
+setInterval(createPetal, 900);
+
+// ==========================================
+// Heart Burst
+// ==========================================
+
+const burst = document.getElementById("burst");
+
+function createHeartBurst() {
+
+    if (!burst) return;
+
+    const hearts = ["❤️", "💖", "💕", "💗", "💝"];
+
+    for (let i = 0; i < 12; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.className = "burst-heart";
+
+        heart.textContent =
+            hearts[Math.floor(Math.random() * hearts.length)];
+
+        heart.style.left = "50%";
+        heart.style.top = "50%";
+
+        heart.style.setProperty(
+            "--x",
+            (Math.random() - 0.5) * 500 + "px"
+        );
+
+        heart.style.setProperty(
+            "--y",
+            (Math.random() - 0.5) * 400 + "px"
+        );
+
+        burst.appendChild(heart);
+
+        setTimeout(() => {
+
+            heart.remove();
+
+        }, 900);
+
+    }
+
+}
+
+// ==========================================
+// Spark Burst
+// ==========================================
+
+function createSparkBurst() {
+
+    if (!burst) return;
+
+    for (let i = 0; i < 18; i++) {
+
+        const spark = document.createElement("div");
+
+        spark.className = "spark-burst";
+
+        spark.style.left = "50%";
+        spark.style.top = "50%";
+
+        spark.style.setProperty(
+            "--dx",
+            (Math.random() - 0.5) * 320 + "px"
+        );
+
+        spark.style.setProperty(
+            "--dy",
+            (Math.random() - 0.5) * 320 + "px"
+        );
+
+        burst.appendChild(spark);
+
+        setTimeout(() => {
+
+            spark.remove();
+
+        }, 800);
+
+    }
+
+}
+
+// ==========================================
+// Initial Effects
+// ==========================================
+
+setTimeout(() => {
+
+    createHeartBurst();
+
+}, 500);
+
+createPetal();

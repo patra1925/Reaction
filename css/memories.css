@@ -1,0 +1,1695 @@
+/* ==========================================
+   MEMORIES.CSS
+   Part 1 - Layout & Scrapbook
+========================================== */
+
+:root{
+
+    --paper:#fffdf8;
+    --pink:#ff5d8f;
+    --pink-light:#ffd8e7;
+    --cream:#fff7ef;
+    --shadow:0 20px 60px rgba(0,0,0,.12);
+    --radius:28px;
+
+}
+
+body{
+
+    overflow-x:hidden;
+    min-height:100vh;
+    background:linear-gradient(135deg,#fff8fb,#fffdf8,#fff4f8);
+
+}
+
+/* ==========================
+   Main Layout
+========================== */
+
+.memory-page{
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:60px;
+
+    padding:70px 40px;
+
+    position:relative;
+
+}
+
+/* ==========================
+   Side Characters
+========================== */
+
+.buddy{
+
+    width:180px;
+
+    user-select:none;
+
+    pointer-events:none;
+
+    animation:buddyFloat 3.5s ease-in-out infinite;
+
+}
+
+.buddy-right{
+
+    animation-delay:1.5s;
+
+}
+
+@keyframes buddyFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-18px);
+
+    }
+
+}
+
+/* ==========================
+   Scrapbook
+========================== */
+
+.scrapbook{
+
+    width:760px;
+
+    max-width:100%;
+
+    background:var(--paper);
+
+    border-radius:36px;
+
+    padding:45px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 25px 70px rgba(0,0,0,.12),
+    inset 0 0 0 2px rgba(255,255,255,.5);
+
+}
+
+/* Paper texture */
+
+.scrapbook::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+    radial-gradient(circle at 1px 1px,
+    rgba(0,0,0,.03) 1px,
+    transparent 0);
+
+    background-size:16px 16px;
+
+    opacity:.35;
+
+    pointer-events:none;
+
+}
+
+.scrapbook::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+        rgba(255,255,255,.45),
+
+        transparent 25%,
+
+        transparent 75%,
+
+        rgba(255,255,255,.3)
+
+    );
+
+    pointer-events:none;
+
+}
+
+/* ==========================
+   Heading
+========================== */
+
+.book-title{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+.book-title span{
+
+    display:block;
+
+    font-size:46px;
+
+    margin-bottom:12px;
+
+}
+
+.book-title h1{
+
+    font-family:'Dancing Script',cursive;
+
+    font-size:58px;
+
+    color:var(--pink);
+
+    font-weight:700;
+
+}
+
+/* ==========================
+   Polaroid Frame
+========================== */
+
+.photo-frame{
+
+    width:460px;
+
+    height:570px;
+
+    margin:auto;
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:18px 18px 70px;
+
+    position:relative;
+
+    transform:rotate(-2deg);
+
+    transition:.5s;
+
+    box-shadow:
+
+    0 20px 45px rgba(0,0,0,.18);
+
+}
+
+.photo-frame:hover{
+
+    transform:rotate(0deg) scale(1.02);
+
+}
+
+.photo-frame{
+
+    overflow:visible;
+
+}
+
+.scrapbook{
+
+    overflow:visible;
+
+}
+
+.photo-frame::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:18px;
+
+    border:2px dashed rgba(255,180,200,.4);
+
+    border-radius:10px;
+
+    pointer-events:none;
+
+}
+
+/* ==========================
+   Image
+========================== */
+
+#memoryImage{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:10px;
+
+    display:block;
+
+    background:#f7f7f7;
+
+    transition:.6s;
+
+}
+
+/* ==========================
+   Washi Tape
+========================== */
+
+.tape{
+
+    position:absolute;
+
+    width:120px;
+
+    height:34px;
+
+    background:
+
+    rgba(255,240,180,.75);
+
+    border-radius:4px;
+
+    opacity:.9;
+
+    box-shadow:
+
+    0 4px 8px rgba(0,0,0,.06);
+
+}
+
+.tape-left{
+
+    left:30px;
+
+    top:-14px;
+
+    transform:rotate(-18deg);
+
+}
+
+.tape-right{
+
+    right:30px;
+
+    top:-14px;
+
+    transform:rotate(18deg);
+
+}
+
+/* ==========================
+   Stickers
+========================== */
+/* =================================
+   DUDU & BUBU STICKERS
+================================= */
+
+.frame-sticker{
+    position:absolute;
+    z-index:20;
+    pointer-events:none;
+    user-select:none;
+    filter:drop-shadow(0 8px 18px rgba(0,0,0,.15));
+    animation:stickerFloat 3.5s ease-in-out infinite;
+}
+/* Peeking */
+
+.peek{
+
+    width:95px;
+
+    top:-38px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+}
+
+/* Hug */
+
+.hug{
+
+    width:95px;
+
+    left:-65px;
+
+    top:130px;
+
+    animation-delay:.5s;
+
+}
+
+/* Kiss */
+
+.kiss{
+
+    width:72px;
+
+    right:-32px;
+
+    top:360px;      /* Move it lower */
+
+    transform:rotate(10deg);
+
+    animation-delay:1.5s;
+}
+
+@keyframes stickerFloat{
+
+    0%,100%{
+
+        transform:
+            translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-8px);
+
+    }
+
+}
+
+/* ==========================================
+   PART 2
+   Reaction • Counter • Navigation
+========================================== */
+
+/* ==========================
+   Reaction Card
+========================== */
+
+.reaction{
+
+    width:100%;
+
+    max-width:620px;
+
+    margin:40px auto 0;
+
+    padding:24px 28px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,.92),
+        rgba(255,245,248,.96)
+    );
+
+    border-radius:22px;
+
+    border:2px solid rgba(255,170,195,.25);
+
+    box-shadow:
+        0 15px 35px rgba(255,120,170,.12);
+
+    color:#555;
+
+    text-align:center;
+
+    font-size:22px;
+
+    font-weight:500;
+
+    line-height:40px;
+
+    min-height:110px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+    transition:.45s;
+
+    font-family:
+    "Poppins",
+    "Segoe UI Emoji",
+    "Apple Color Emoji",
+    "Noto Color Emoji",
+    sans-serif;
+
+}
+
+.reaction:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 20px 40px rgba(255,120,170,.18);
+
+}
+
+.reaction::before{
+
+    content:"❤️";
+
+    position:absolute;
+
+    top:-18px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:white;
+
+    border-radius:50%;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+
+}
+
+.reaction::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:22px;
+
+    border:1px solid rgba(255,255,255,.45);
+
+    pointer-events:none;
+
+}
+
+/* ==========================
+   Counter
+========================== */
+
+.counter{
+
+    margin-top:30px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    color:#777;
+
+}
+
+#currentPage{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        #ff7ea7,
+        #ff5d8f
+    );
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:
+        0 10px 25px rgba(255,93,143,.25);
+
+}
+
+#totalPages{
+
+    color:var(--pink);
+
+}
+
+/* ==========================
+   Navigation
+========================== */
+
+.navigation{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:30px;
+
+    margin-top:38px;
+
+    flex-wrap:wrap;
+
+}
+
+/* ==========================
+   Buttons
+========================== */
+
+.navigation button{
+
+    min-width:190px;
+
+    padding:18px 32px;
+
+    border:none;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        #ff77a5,
+        #ff5d8f
+    );
+
+    box-shadow:
+        0 15px 30px rgba(255,93,143,.22);
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.navigation button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 20px 35px rgba(255,93,143,.32);
+
+}
+
+.navigation button:active{
+
+    transform:scale(.96);
+
+}
+
+/* Shine */
+
+.navigation button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-40%;
+
+    left:-120%;
+
+    width:60px;
+
+    height:220%;
+
+    background:rgba(255,255,255,.35);
+
+    transform:rotate(25deg);
+
+    transition:.8s;
+
+}
+
+.navigation button:hover::before{
+
+    left:140%;
+
+}
+
+/* Previous */
+
+#prevBtn{
+
+    background:linear-gradient(
+        135deg,
+        #ff9dbd,
+        #ff7ea7
+    );
+
+}
+
+/* Next */
+
+#nextBtn{
+
+    background:linear-gradient(
+        135deg,
+        #ff5d8f,
+        #ff3d78
+    );
+
+}
+
+/* Disabled */
+
+.navigation button:disabled{
+
+    opacity:.45;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+    box-shadow:none;
+
+}
+
+/* ==========================
+   Fade Helpers
+========================== */
+
+.fade-out{
+
+    opacity:0;
+
+    transform:scale(.96);
+
+}
+
+.fade-in{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+/* ==========================
+   Typewriter Cursor
+========================== */
+
+.typing::after{
+
+    content:"|";
+
+    margin-left:3px;
+
+    animation:blink .8s infinite;
+
+}
+
+@keyframes blink{
+
+    0%,100%{
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================
+   Selection
+========================== */
+
+::selection{
+
+    background:#ff8eb3;
+
+    color:white;
+
+}
+
+/* ==========================================
+   PART 3
+   Animations • Petals • Sparkles
+========================================== */
+
+/* ==========================
+   Photo Change Animation
+========================== */
+
+.photo-enter{
+
+    animation:photoEnter .7s ease forwards;
+
+}
+
+.photo-exit{
+
+    animation:photoExit .45s ease forwards;
+
+}
+
+@keyframes photoEnter{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+            rotate(-6deg)
+            scale(.88);
+
+        filter:blur(6px);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+            rotate(0deg)
+            scale(1);
+
+        filter:blur(0);
+
+    }
+
+}
+
+@keyframes photoExit{
+
+    0%{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            rotate(5deg)
+            scale(.92);
+
+        filter:blur(5px);
+
+    }
+
+}
+
+/* ==========================
+   Scrapbook Page Turn
+========================== */
+
+.page-turn{
+
+    animation:pageTurn .8s ease;
+
+    transform-origin:center;
+
+}
+
+@keyframes pageTurn{
+
+    0%{
+
+        transform:
+            perspective(1200px)
+            rotateY(0deg);
+
+    }
+
+    50%{
+
+        transform:
+            perspective(1200px)
+            rotateY(-12deg)
+            scale(.98);
+
+    }
+
+    100%{
+
+        transform:
+            perspective(1200px)
+            rotateY(0deg);
+
+    }
+
+}
+
+/* ==========================
+   Reaction Animation
+========================== */
+
+.reaction-show{
+
+    animation:reactionShow .7s ease;
+
+}
+
+@keyframes reactionShow{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+            translateY(25px)
+            scale(.96);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+
+/* ==========================
+   Floating Petals
+========================== */
+
+#petals{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:5;
+
+}
+
+.petal{
+
+    position:absolute;
+
+    top:-60px;
+
+    font-size:22px;
+
+    opacity:.85;
+
+    animation:petalFall linear forwards;
+
+}
+
+@keyframes petalFall{
+
+    0%{
+
+        transform:
+            translateY(-60px)
+            rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    10%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+            translateY(120vh)
+            translateX(100px)
+            rotate(540deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================
+   Heart Burst
+========================== */
+
+#burst{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:20;
+
+}
+
+.burst-heart{
+
+    position:absolute;
+
+    font-size:24px;
+
+    animation:burstHeart .9s ease forwards;
+
+}
+
+@keyframes burstHeart{
+
+    0%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(.4);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            scale(1.4)
+            rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================
+   Sparkle Burst
+========================== */
+
+.spark-burst{
+
+    position:absolute;
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+
+        0 0 14px white,
+
+        0 0 30px #ffd5ea;
+
+    animation:sparkBurst .8s ease forwards;
+
+}
+
+@keyframes sparkBurst{
+
+    0%{
+
+        transform:scale(.2);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+
+            translate(
+
+                var(--dx),
+
+                var(--dy)
+
+            )
+
+            scale(1.5);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================
+   Polaroid Hover
+========================== */
+
+.photo-frame{
+
+    width:460px;
+    height:570px;
+
+    margin:auto;
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:18px 18px 70px;
+
+    position:relative;
+
+    overflow:visible;   /* Allows stickers outside the frame */
+
+    transform:rotate(-2deg);
+
+    transition:
+        transform .45s,
+        box-shadow .45s;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.18);
+
+}
+
+.photo-frame:hover{
+
+    transform:
+        rotate(-1deg)
+        scale(1.03);
+
+    box-shadow:
+        0 28px 60px rgba(0,0,0,.18);
+
+}
+
+/* ==========================
+   Gentle Glow
+========================== */
+
+.photo-frame::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:12px;
+
+    pointer-events:none;
+
+    box-shadow:
+
+        inset 0 0 40px
+
+        rgba(255,255,255,.15);
+
+}
+
+/* ==========================
+   Book Floating
+========================== */
+
+.scrapbook{
+
+    animation:bookFloat 5s ease-in-out infinite;
+
+}
+
+@keyframes bookFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+}
+
+/* ==========================
+   Fade Utilities
+========================== */
+
+.hidden{
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+.visible{
+
+    opacity:1;
+
+}
+
+/* ==========================
+   Smooth Transitions
+========================== */
+
+#memoryImage,
+.reaction,
+.scrapbook,
+.photo-frame{
+
+    will-change:
+
+        transform,
+
+        opacity;
+
+}
+
+/* ==========================================
+   PART 4
+   Responsive • Utilities • Final Polish
+========================================== */
+
+/* ==========================
+   Large Desktop (1400px+)
+========================== */
+
+@media (min-width:1400px){
+
+    .scrapbook{
+
+        width:820px;
+
+        padding:55px;
+
+    }
+
+    .photo-frame{
+
+        width:460px;
+
+        height:570px;
+
+    }
+
+    .book-title h1{
+
+        font-size:55px;
+
+    }
+
+}
+
+/* ==========================
+   Laptop / Tablet
+========================== */
+
+@media (max-width:1100px){
+
+    .memory-page{
+
+        gap:30px;
+
+        padding:50px 25px;
+
+    }
+
+    .buddy{
+
+        width:120px;
+
+    }
+
+    .scrapbook{
+
+        width:100%;
+
+        padding:35px;
+
+    }
+
+    .photo-frame{
+
+        width:360px;
+
+        height:450px;
+
+    }
+
+    .book-title h1{
+
+        font-size:48px;
+
+    }
+
+}
+
+/* ==========================
+   Mobile Layout
+========================== */
+
+@media (max-width:768px){
+
+    .memory-page{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        padding:25px 15px 50px;
+
+    }
+
+    .buddy{
+
+        width:90px;
+
+    }
+
+    .buddy-left{
+
+        order:-1;
+
+    }
+
+    .buddy-right{
+
+        order:3;
+
+    }
+
+    .scrapbook{
+
+        padding:22px;
+
+        border-radius:24px;
+
+    }
+
+    .book-title span{
+
+        font-size:34px;
+
+    }
+
+    .book-title h1{
+
+        font-size:36px;
+
+        line-height:1.2;
+
+    }
+
+    .photo-frame{
+
+        width:100%;
+
+        max-width:320px;
+
+        height:400px;
+
+        padding:14px 14px 55px;
+
+    }
+
+    .reaction{
+
+        font-size:17px;
+
+        line-height:30px;
+
+        padding:18px;
+
+        min-height:90px;
+
+    }
+
+    .navigation{
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+    .navigation button{
+
+        width:100%;
+
+        min-width:unset;
+
+        padding:15px 20px;
+
+        font-size:16px;
+
+    }
+
+    .counter{
+
+        font-size:18px;
+
+    }
+
+    #currentPage{
+
+        width:42px;
+
+        height:42px;
+
+        font-size:16px;
+
+    }
+
+    .sticker{
+
+        font-size:24px;
+
+    }
+
+    .tape{
+
+        width:85px;
+
+        height:24px;
+
+    }
+
+}
+
+/* ==========================
+   Small Phones
+========================== */
+
+@media (max-width:420px){
+
+    .book-title h1{
+
+        font-size:30px;
+
+    }
+
+    .photo-frame{
+
+        max-width:280px;
+
+        height:350px;
+
+    }
+
+    .reaction{
+
+        font-size:15px;
+
+        line-height:28px;
+
+    }
+
+}
+
+/* ==========================
+   Smooth Scrolling
+========================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+/* ==========================
+   Better Images
+========================== */
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+/* ==========================
+   Focus Accessibility
+========================== */
+
+button:focus-visible{
+
+    outline:3px solid rgba(255,93,143,.4);
+
+    outline-offset:4px;
+
+}
+
+/* ==========================
+   Scrollbar
+========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#fff4f8;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#ff8eb3;
+
+    border-radius:999px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#ff5d8f;
+
+}
+
+/* Firefox */
+
+*{
+
+    scrollbar-width:thin;
+
+    scrollbar-color:#ff8eb3 #fff4f8;
+
+}
+
+/* ==========================
+   Utility Classes
+========================== */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.mt-20{
+
+    margin-top:20px;
+
+}
+
+.mt-40{
+
+    margin-top:40px;
+
+}
+
+.hidden{
+
+    display:none !important;
+
+}
+
+.fade{
+
+    transition:opacity .35s ease, transform .35s ease;
+
+}
+
+.no-select{
+
+    user-select:none;
+
+}
+
+/* ==========================
+   Reduced Motion Support
+========================== */
+
+@media (prefers-reduced-motion: reduce){
+
+    *{
+
+        animation:none !important;
+
+        transition:none !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}
+
+.forever-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:22px;
+
+    opacity:0;
+
+    transform:translateY(25px);
+
+    pointer-events:none;
+
+    transition:.6s ease;
+
+}
+
+.forever-container.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    pointer-events:auto;
+
+}
+
+#foreverBtn{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:16px 36px;
+
+    border-radius:999px;
+
+    background:linear-gradient(135deg,#ff6c99,#ff4f87);
+
+    color:#fff;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    box-shadow:0 12px 28px rgba(255,93,143,.28);
+
+    transition:.35s;
+
+}
+
+#foreverBtn:hover{
+
+    transform:translateY(-4px) scale(1.05);
+
+}
+
+/* ==========================
+   Forever Button Responsive
+========================== */
+
+.forever-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    margin-top:24px;
+}
+
+#foreverBtn{
+    min-width:260px;
+    max-width:340px;
+    width:auto;
+    padding:16px 32px;
+    font-size:17px;
+    white-space:nowrap;
+}
+
+@media (max-width:768px){
+
+    #foreverBtn{
+
+        width:100%;
+        max-width:300px;
+
+        padding:16px 20px;
+
+        font-size:16px;
+
+    }
+
+}

@@ -1,0 +1,464 @@
+/* ==========================================
+   ENDING PAGE
+   Responsive
+========================================== */
+
+:root{
+
+    --pink:#ff5d8f;
+    --pink2:#ff8eb3;
+    --paper:#fffdfb;
+
+}
+
+.ending-page{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px 20px;
+
+    position:relative;
+
+}
+
+.ending-card{
+
+    width:850px;
+
+    max-width:100%;
+
+    background:rgba(255,255,255,.82);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:30px;
+
+    padding:50px 40px;
+
+    text-align:center;
+
+    box-shadow:
+
+    0 25px 70px rgba(0,0,0,.12);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* ==========================
+   Heart
+========================== */
+
+.love-icon{
+
+    font-size:55px;
+
+    animation:heartBeat 1.5s infinite;
+
+}
+
+@keyframes heartBeat{
+
+    0%,100%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.18);
+
+    }
+
+}
+
+/* ==========================
+   Titles
+========================== */
+
+.ending-card h1{
+
+    margin-top:15px;
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:62px;
+
+    color:var(--pink);
+
+}
+
+.ending-card h2{
+
+    margin-top:12px;
+
+    color:#666;
+
+    font-weight:500;
+
+    line-height:1.8;
+
+    font-size:24px;
+
+}
+
+/* ==========================
+   Letter
+========================== */
+
+.letter{
+
+    margin:40px auto;
+
+    max-width:650px;
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    line-height:2;
+
+    color:#555;
+
+    font-size:19px;
+
+    box-shadow:
+
+    0 15px 40px rgba(0,0,0,.08);
+
+}
+
+/* ==========================
+   Love Text
+========================== */
+
+.love-text{
+
+    font-size:42px;
+
+    color:var(--pink);
+
+    font-family:"Dancing Script",cursive;
+
+    animation:glowLove 2.2s infinite;
+
+}
+
+@keyframes glowLove{
+
+    0%,100%{
+
+        transform:scale(1);
+
+        text-shadow:none;
+
+    }
+
+    50%{
+
+        transform:scale(1.06);
+
+        text-shadow:
+
+        0 0 18px rgba(255,93,143,.5);
+
+    }
+
+}
+
+/* ==========================
+   Restart Button
+========================== */
+
+#foreverBtn{
+
+    margin-top:35px;
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:18px 38px;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+
+    135deg,
+
+    #ff7ea7,
+
+    #ff4f86
+
+    );
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    box-shadow:
+
+    0 15px 35px rgba(255,93,143,.25);
+
+}
+
+#foreverBtn:hover{
+
+    transform:
+
+    translateY(-4px)
+
+    scale(1.03);
+
+}
+
+/* ==========================
+   Footer
+========================== */
+
+.ending-footer{
+
+    text-align:center;
+
+    padding:25px;
+
+    color:#777;
+
+    font-size:15px;
+
+}
+
+/* ==========================
+   Characters
+========================== */
+
+.ending-buddy{
+
+    position:fixed;
+
+    width:150px;
+
+    bottom:25px;
+
+    pointer-events:none;
+
+    animation:buddyFloat 3.5s ease-in-out infinite;
+
+}
+
+.left{
+
+    left:20px;
+
+}
+
+.right{
+
+    right:20px;
+
+    animation-delay:1.5s;
+
+}
+
+@keyframes buddyFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-16px);
+
+    }
+
+}
+
+/* ==========================
+   Confetti
+========================== */
+
+#confetti{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+}
+
+.confetti{
+
+    position:absolute;
+
+    width:10px;
+
+    height:18px;
+
+    border-radius:4px;
+
+    animation:confettiFall linear forwards;
+
+}
+
+@keyframes confettiFall{
+
+    from{
+
+        transform:
+
+        translateY(-40px)
+
+        rotate(0deg);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:
+
+        translateY(110vh)
+
+        rotate(720deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media(max-width:768px){
+
+    .ending-page{
+
+        padding:20px 12px 40px;
+
+    }
+
+    .ending-card{
+
+        padding:28px 20px;
+
+        border-radius:22px;
+
+    }
+
+    .love-icon{
+
+        font-size:42px;
+
+    }
+
+    .ending-card h1{
+
+        font-size:42px;
+
+    }
+
+    .ending-card h2{
+
+        font-size:18px;
+
+        line-height:1.6;
+
+    }
+
+    .letter{
+
+        padding:20px;
+
+        font-size:16px;
+
+        line-height:1.8;
+
+        margin:25px auto;
+
+    }
+
+    .love-text{
+
+        font-size:32px;
+
+    }
+
+    #foreverBtn{
+
+        width:100%;
+
+        padding:15px;
+
+        font-size:16px;
+
+    }
+
+    .ending-buddy{
+
+        width:80px;
+
+        bottom:10px;
+
+    }
+
+    .ending-footer{
+
+        font-size:13px;
+
+        padding:18px;
+
+    }
+
+}
+
+@media(max-width:420px){
+
+    .ending-card h1{
+
+        font-size:34px;
+
+    }
+
+    .ending-card h2{
+
+        font-size:16px;
+
+    }
+
+    .love-text{
+
+        font-size:28px;
+
+    }
+
+    .letter{
+
+        font-size:15px;
+
+    }
+
+}

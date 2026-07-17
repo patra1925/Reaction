@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>I'm Sorry ❤️</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- Background -->
+
+    <div class="bg-blur bg1"></div>
+    <div class="bg-blur bg2"></div>
+
+    <div id="hearts"></div>
+    <div id="sparkles"></div>
+
+    <!-- Letter -->
+
+    <section class="landing">
+
+        <div class="glass-card apology-card">
+
+            <div class="letterIcon">
+
+                💌
+
+            </div>
+
+            <h1>
+
+                I'm Sorry...
+
+            </h1>
+
+            <h2>
+
+                Please Read This ❤️
+
+            </h2>
+
+            <div id="typewriter"
+                 class="letterText">
+
+            </div>
+
+            <button id="continueBtn">
+
+                Continue ❤️
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <script>
+
+        /* Letter */
+
+        const message = `
+
+You think I don't notice your photos?
+
+ Not a chance.
+
+I actually looked at them many times.
+
+Every single day.
+
+Every smile...
+
+Every pose...
+
+Every tiny little detail...
+
+I noticed everything.
+
+The only mistake I made...
+
+was not reacting.
+
+I'm truly sorry if that made you feel ignored.
+
+Because you were never ignored.
+
+You are beautiful.
+
+More beautiful than you even realize.
+
+And I wanted to tell you that in a special way.
+
+So...
+
+I made something just for you.
+
+❤️
+
+`;
+
+        const box = document.getElementById("typewriter");
+
+        let i = 0;
+
+        function type() {
+
+            if (i < message.length) {
+
+                box.innerHTML += message.charAt(i);
+
+                i++;
+
+                setTimeout(type, 30);
+
+            }
+
+        }
+
+        type();
+
+        /* Continue */
+
+        document.getElementById("continueBtn")
+
+            .addEventListener("click", () => {
+
+                document.body.style.opacity = "0";
+
+                document.body.style.transition = ".8s";
+
+                setTimeout(() => {
+
+                    location.href = "memories.html";
+
+                }, 800);
+
+            });
+
+        /* Floating Hearts */
+
+        const hearts = document.getElementById("hearts");
+
+        const list = ["🤍", "💕", "💖", "💗"];
+
+        setInterval(() => {
+
+            const h = document.createElement("div");
+
+            h.className = "heart";
+
+            h.innerHTML = list[Math.floor(Math.random() * list.length)];
+
+            h.style.left = Math.random() * 100 + "%";
+
+            h.style.animationDuration =
+
+                6 + Math.random() * 4 + "s";
+
+            hearts.appendChild(h);
+
+            setTimeout(() => h.remove(), 9000);
+
+        }, 400);
+
+        /* Sparkles */
+
+        const sparkles = document.getElementById("sparkles");
+
+        for (let i = 0; i < 50; i++) {
+
+            const s = document.createElement("div");
+
+            s.className = "sparkle";
+
+            s.style.left = Math.random() * 100 + "%";
+
+            s.style.top = Math.random() * 100 + "%";
+
+            s.style.animationDelay = Math.random() * 2 + "s";
+
+            sparkles.appendChild(s);
+
+        }
+
+    </script>
+
+</body>
+
+</html>

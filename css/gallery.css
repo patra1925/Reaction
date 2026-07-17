@@ -1,0 +1,761 @@
+/* ==========================================
+   GALLERY.CSS
+   Part 1
+   Layout • Gallery Grid • Cards
+========================================== */
+
+:root{
+
+    --pink:#ff5d8f;
+    --pink-light:#ffdbe8;
+    --paper:#fffdfb;
+    --glass:rgba(255,255,255,.72);
+
+}
+
+/* ==========================
+   Page
+========================== */
+
+body{
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    background:linear-gradient(
+        135deg,
+        #fff8fb,
+        #fffefc,
+        #fff2f8
+    );
+
+}
+
+/* ==========================
+   Main Layout
+========================== */
+
+.gallery-page{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:70px 30px;
+
+    position:relative;
+
+}
+
+/* ==========================
+   Card
+========================== */
+
+.gallery-card{
+
+    width:1200px;
+
+    max-width:100%;
+
+    background:var(--glass);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:34px;
+
+    padding:45px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+
+        0 25px 70px rgba(0,0,0,.12);
+
+}
+
+/* ==========================
+   Heading
+========================== */
+
+.gallery-header{
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+}
+
+.gallery-header span{
+
+    display:block;
+
+    font-size:48px;
+
+    margin-bottom:12px;
+
+}
+
+.gallery-header h1{
+
+    font-family:'Dancing Script',cursive;
+
+    color:var(--pink);
+
+    font-size:60px;
+
+    margin-bottom:15px;
+
+}
+
+.gallery-header p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    font-size:18px;
+
+    line-height:34px;
+
+    color:#666;
+
+}
+
+/* ==========================
+   Gallery Grid
+========================== */
+
+.gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(auto-fill,minmax(260px,1fr));
+
+    gap:26px;
+
+}
+
+/* ==========================
+   Photo Card
+========================== */
+
+.gallery-item{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    cursor:pointer;
+
+    background:white;
+
+    box-shadow:
+
+        0 18px 40px rgba(0,0,0,.10);
+
+    transition:
+
+        transform .35s,
+
+        box-shadow .35s;
+
+}
+
+.gallery-item:hover{
+
+    transform:
+
+        translateY(-8px)
+        scale(1.02);
+
+    box-shadow:
+
+        0 28px 55px rgba(0,0,0,.16);
+
+}
+
+/* ==========================
+   Image
+========================== */
+
+.gallery-item img{
+
+    width:100%;
+
+    height:300px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:
+
+        transform .5s;
+
+}
+
+.gallery-item:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/* ==========================
+   Overlay
+========================== */
+
+.gallery-item::after{
+
+    content:"❤️ View";
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(255,93,143,.35);
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    opacity:0;
+
+    transition:.35s;
+
+}
+
+.gallery-item:hover::after{
+
+    opacity:1;
+
+}
+
+/* ==========================
+   Dudu & Bubu
+========================== */
+
+.gallery-buddy{
+
+    position:fixed;
+
+    width:150px;
+
+    z-index:5;
+
+    animation:buddyFloat 3.5s ease-in-out infinite;
+
+    pointer-events:none;
+
+}
+
+.gallery-buddy.left{
+
+    left:25px;
+
+    bottom:35px;
+
+}
+
+.gallery-buddy.right{
+
+    right:25px;
+
+    bottom:35px;
+
+    animation-delay:1.5s;
+
+}
+
+@keyframes buddyFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+}
+
+/* ==========================================
+   Part 2
+   Lightbox • Button • Responsive
+========================================== */
+
+/* ==========================
+   Continue Button
+========================== */
+
+.gallery-actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:50px;
+
+}
+
+.gallery-actions button{
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    padding:18px 42px;
+
+    border-radius:999px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:#fff;
+
+    background:linear-gradient(
+        135deg,
+        #ff7aa8,
+        #ff4f86
+    );
+
+    box-shadow:
+        0 18px 35px rgba(255,93,143,.28);
+
+    transition:
+        transform .35s,
+        box-shadow .35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.gallery-actions button:hover{
+
+    transform:
+        translateY(-5px)
+        scale(1.03);
+
+    box-shadow:
+        0 24px 45px rgba(255,93,143,.38);
+
+}
+
+.gallery-actions button:active{
+
+    transform:scale(.97);
+
+}
+
+.gallery-actions button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-40%;
+
+    left:-120%;
+
+    width:60px;
+
+    height:220%;
+
+    background:rgba(255,255,255,.35);
+
+    transform:rotate(25deg);
+
+    transition:.8s;
+
+}
+
+.gallery-actions button:hover::before{
+
+    left:140%;
+
+}
+
+/* ==========================
+   Lightbox
+========================== */
+
+.lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(15,15,20,.90);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px;
+
+    z-index:999;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+}
+
+.lightbox.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.lightbox img{
+
+    max-width:90%;
+
+    max-height:90vh;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.45);
+
+    animation:zoomIn .35s ease;
+
+}
+
+@keyframes zoomIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.85);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ==========================
+   Close Button
+========================== */
+
+.close-btn{
+
+    position:absolute;
+
+    top:30px;
+
+    right:35px;
+
+    color:#fff;
+
+    font-size:52px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    user-select:none;
+
+}
+
+.close-btn:hover{
+
+    transform:rotate(90deg);
+
+    color:#ffd6e4;
+
+}
+
+/* ==========================
+   Floating Petals
+========================== */
+
+#petals{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:3;
+
+}
+
+.gallery-petal{
+
+    position:absolute;
+
+    top:-50px;
+
+    font-size:24px;
+
+    animation:galleryPetal linear forwards;
+
+}
+
+@keyframes galleryPetal{
+
+    from{
+
+        transform:
+            translateY(-60px)
+            rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    15%{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:
+            translateY(120vh)
+            translateX(80px)
+            rotate(540deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:992px){
+
+    .gallery-card{
+
+        padding:30px;
+
+    }
+
+    .gallery-header h1{
+
+        font-size:48px;
+
+    }
+
+    .gallery-grid{
+
+        grid-template-columns:
+        repeat(auto-fill,minmax(220px,1fr));
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .gallery-page{
+
+        padding:30px 15px 50px;
+
+    }
+
+    .gallery-card{
+
+        padding:22px;
+
+        border-radius:24px;
+
+    }
+
+    .gallery-header span{
+
+        font-size:38px;
+
+    }
+
+    .gallery-header h1{
+
+        font-size:36px;
+
+    }
+
+    .gallery-header p{
+
+        font-size:16px;
+
+        line-height:30px;
+
+    }
+
+    .gallery-grid{
+
+        grid-template-columns:1fr;
+
+        gap:18px;
+
+    }
+
+    .gallery-item img{
+
+        height:260px;
+
+    }
+
+    .gallery-actions button{
+
+        width:100%;
+
+        padding:16px;
+
+    }
+
+    .gallery-buddy{
+
+        width:90px;
+
+    }
+
+    .close-btn{
+
+        font-size:42px;
+
+        top:18px;
+
+        right:20px;
+
+    }
+
+}
+
+@media(max-width:430px){
+
+    .gallery-header h1{
+
+        font-size:30px;
+
+    }
+
+    .gallery-item img{
+
+        height:220px;
+
+    }
+
+}
+
+/* ==========================
+   Scrollbar
+========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#fff3f8;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#ff8ab2;
+
+    border-radius:999px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#ff5d8f;
+
+}
+
+/* Firefox */
+
+*{
+
+    scrollbar-width:thin;
+
+    scrollbar-color:#ff8ab2 #fff3f8;
+
+}
+
+/* ==========================
+   Accessibility
+========================== */
+
+button:focus-visible,
+.close-btn:focus-visible{
+
+    outline:3px solid rgba(255,93,143,.45);
+
+    outline-offset:4px;
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    *{
+
+        animation:none !important;
+
+        transition:none !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}
+
+/* ==========================================
+   End of gallery.css
+========================================== */
